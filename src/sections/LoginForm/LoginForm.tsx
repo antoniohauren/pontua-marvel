@@ -1,8 +1,9 @@
 import AttentionIcon from "@/assets/attentionIcon.svg";
 import BaseSection from "@/components/BaseSection";
-import EmailInput from "@/components/EmailInput/EmailInput";
-import LoginButton from "@/components/LoginButton/LoginButton";
-import PasswordInput from "@/components/PasswordInput/PasswordInput";
+import EmailInput from "@/components/EmailInput/";
+import LoginButton from "@/components/LoginButton/";
+import PasswordInput from "@/components/PasswordInput/";
+import { Link } from "react-router-dom";
 import { LoginFormProps } from ".";
 
 export default function LoginForm({}: LoginFormProps) {
@@ -27,9 +28,12 @@ export default function LoginForm({}: LoginFormProps) {
           <AttentionIcon />
         </div>
 
-        <p className="cursor-pointer text-xs hover:underline">
+        <Link
+          to={"/forgot-password"}
+          className="cursor-pointer text-xs hover:underline"
+        >
           Esqueceu a senha?
-        </p>
+        </Link>
       </div>
     </BaseSection>
   );

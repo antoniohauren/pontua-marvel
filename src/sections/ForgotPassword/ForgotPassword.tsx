@@ -1,12 +1,19 @@
-import BaseSection from "@/components/BaseSection/BaseSection";
+import BaseSection from "@/components/BaseSection";
 import Button from "@/components/Button/";
-import EmailInput from "@/components/EmailInput/EmailInput";
+import EmailInput from "@/components/EmailInput";
 import { isEmail } from "@/helpers/isEmail";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ForgotPasswordProps } from ".";
 
 export default function ForgotPassword({}: ForgotPasswordProps) {
   const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
+
+  function handleSendLink() {
+    navigate("/forgot-password/success");
+  }
 
   const isDisabled = !isEmail(email);
 
@@ -19,7 +26,12 @@ export default function ForgotPassword({}: ForgotPasswordProps) {
       <div className="flex flex-col gap-2">
         <EmailInput value={email} onChange={(e) => setEmail(e)} />
 
-        <Button title="enviar link" fullWidth={true} disabled={isDisabled} />
+        <Button
+          title="enviar link"
+          fullWidth={true}
+          disabled={isDisabled}
+          onClick={handleSendLink}
+        />
       </div>
     </BaseSection>
   );

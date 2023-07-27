@@ -9,7 +9,7 @@ export default function ForgotPasswordSuccess({}: ForgotPasswordSuccessProps) {
       titleDetail=" ;)"
       description="Foi enviado um e-mail para você com instruções de como redefinir a sua senha."
     >
-      <Button title="voltar para o login" fullWidth={true} />
+      <Button title="voltar para o login" fullWidth={true} href="/login" />
     </BaseSection>
   );
 }
