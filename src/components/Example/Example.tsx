@@ -1,3 +1,3 @@
 export default function Example() {
-  return <h1>qwe</h1>;
+  return <h1>Example</h1>;
 }

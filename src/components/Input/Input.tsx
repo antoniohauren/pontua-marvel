@@ -7,15 +7,15 @@ export default function Input({
   ...rest
 }: InputProps) {
   return (
-    <div className="relative focus-within:text-blue/800 text-gray/400">
+    <div className="relative text-gray/400 focus-within:text-blue/800">
       <input
         {...rest}
         ref={inputRef}
-        className="border-gray/400 border-2 px-4 rounded-lg focus:outline-blue/800 focus:text-blue/800 w-full py-2 group"
+        className="group w-full rounded-lg border-2 border-gray/400 px-4 py-2 focus:text-blue/800 focus:outline-blue/800"
       />
 
       <div
-        className={`w-10 h-10 absolute top-0 bottom-0 right-0 pr-2 mr-1 my-auto py-2 ${
+        className={`absolute bottom-0 right-0 top-0 my-auto mr-1 h-10 w-10 py-2 pr-2 ${
           onClick && "cursor-pointer"
         }`}
         onClick={onClick}
