@@ -16,6 +16,7 @@ export default {
       "gray/500": "#777777",
       "gray/100": "#eaecf0",
       "gray/400": "#b7b7b7",
+      "gray/300": "#c3c3c3",
     },
     extend: {},
   },
