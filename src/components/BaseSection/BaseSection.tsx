@@ -9,7 +9,7 @@ export default function BaseSection({
 }: BaseSectionProps) {
   return (
     <div
-      className={`max-w-[380px] rounded-xl bg-white p-8 py-10 shadow-sm ${
+      className={`min-w-full rounded-xl bg-white p-8 py-10 shadow-sm md:max-w-[400px] ${
         !shouldShrink && "min-h-[400px]"
       }`}
     >
