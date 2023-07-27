@@ -4,9 +4,12 @@ export default {
   theme: {
     colors: {
       divider: "#ebeff2",
+      white: "#ffffff",
+      black: "#000000",
       "blue/800": "#00113d",
       "blue/600": "#213770",
       "blue/200": "#747d94",
+      "orange/700": "#F21A05",
       "orange/500": "#f21a05",
       "orange/400": "#f43724",
       "gray/background": "#f5f6f8",

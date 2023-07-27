@@ -11,7 +11,7 @@ export default function Input({
       <input
         {...rest}
         ref={inputRef}
-        className="group w-full rounded-lg border-2 border-gray/400 px-4 py-2 focus:text-blue/800 focus:outline-blue/800"
+        className="group w-full rounded-lg border-2 border-gray/400 px-4 py-4 focus:text-blue/800 focus:outline-blue/800"
       />
 
       <div
