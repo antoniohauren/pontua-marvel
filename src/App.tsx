@@ -1,4 +1,5 @@
 import HomeDashBoardLayout from "@/layouts/home";
+import ProfileLayout from "@/layouts/profile";
 import {
   ForgotPasswordPage,
   ForgotPasswordPageSuccess,
@@ -16,6 +17,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectPage>
             <HomeDashBoardLayout />
+          </ProtectPage>
+        ),
+      },
+      {
+        path: "profile/:id",
+        element: (
+          <ProtectPage>
+            <ProfileLayout />
           </ProtectPage>
         ),
       },

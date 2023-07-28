@@ -3,7 +3,7 @@ import LoggedBaseLayout from "@/components/LoggedBaseLayout";
 
 export default function HomeDashBoardLayout() {
   return (
-    <LoggedBaseLayout>
+    <LoggedBaseLayout hasSearch={true}>
       <HeroGrid
         heroes={[
           {
