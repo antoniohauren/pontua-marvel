@@ -2,6 +2,10 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      Epilog: ["Epilogue", "sans-serif"],
+      Inter: ["Inter", "sans-serif"],
+    },
     colors: {
       divider: "#ebeff2",
       white: "#ffffff",
@@ -13,10 +17,11 @@ export default {
       "orange/500": "#f21a05",
       "orange/400": "#f43724",
       "gray/background": "#f5f6f8",
-      "gray/500": "#777777",
       "gray/100": "#eaecf0",
-      "gray/400": "#b7b7b7",
       "gray/300": "#c3c3c3",
+      "gray/400": "#b7b7b7",
+      "gray/500": "#777777",
+      "gray/900": "#101828",
     },
     extend: {},
   },
