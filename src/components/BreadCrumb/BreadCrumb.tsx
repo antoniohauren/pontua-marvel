@@ -2,12 +2,12 @@ import { BreadCrumbProps } from ".";
 
 export default function BreadCrumb({ items }: BreadCrumbProps) {
   return (
-    <div>
+    <div className="cursor-default">
       {items?.map((item, index) => (
         <>
           <span
             key={index}
-            className={`${
+            className={`text-2xl ${
               index === 0 ? "font-bold text-blue/800" : "text-blue/600"
             }`}
           >
@@ -15,7 +15,7 @@ export default function BreadCrumb({ items }: BreadCrumbProps) {
           </span>
 
           {index != items.length - 1 && (
-            <span className="mx-1 font-bold text-orange/500">/</span>
+            <span className="mx-1 text-2xl font-bold text-orange/500">/</span>
           )}
         </>
       ))}

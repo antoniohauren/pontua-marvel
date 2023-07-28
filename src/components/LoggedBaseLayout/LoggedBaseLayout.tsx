@@ -28,7 +28,7 @@ export default function LoggedBaseLayout({
 
       <div>
         <TopBar hasSearch={hasSearch} />
-        <div className="p-4">{children}</div>
+        <div className="p-10">{children}</div>
       </div>
     </div>
   );
