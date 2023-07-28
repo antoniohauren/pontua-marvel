@@ -1,8 +1,10 @@
+import HomeDashBoardLayout from "@/layouts/home";
 import {
   ForgotPasswordPage,
   ForgotPasswordPageSuccess,
   LoginPage,
 } from "@/pages";
+import ProtectPage from "@/pages/protected";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -11,7 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LoginPage />,
+        element: (
+          <ProtectPage>
+            <HomeDashBoardLayout />
+          </ProtectPage>
+        ),
       },
       {
         path: "forgot-password",
