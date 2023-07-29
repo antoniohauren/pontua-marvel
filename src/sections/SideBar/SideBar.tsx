@@ -13,8 +13,9 @@ export default function SideBar({ menuItems }: SideBarProps) {
       </Link>
 
       <div className="w-full border-b-[1px] border-gray/100 p-4 shadow-sm">
-        {menuItems?.map((item) => (
+        {menuItems?.map((item, index) => (
           <MenuItem
+            key={index}
             label={item.label}
             href={item.href}
             icon={item.icon}

@@ -8,5 +8,5 @@ export default function ProtectPage({ children }: { children: ReactNode }) {
     return <Navigate to="/login" />;
   }
 
-  return children;
+  return <>{children}</>;
 }
