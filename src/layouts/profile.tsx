@@ -26,7 +26,7 @@ export default function ProfileLayout({
         <Tabs
           items={[
             { label: "Visão Geral", content: <h1>Visão Geral</h1> },
-            { label: "Series", content: <List items={series} /> },
+            { label: "Séries", content: <List items={series} /> },
             { label: "Quadrinhos", content: <List items={comics} /> },
             { label: "Eventos", content: <List items={events} /> },
             { label: "Autores", content: <List items={authors} /> },
