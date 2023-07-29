@@ -1,43 +1,16 @@
+import { HeroGridProps } from "@/components/Hero/HeroGrid";
 import HeroGrid from "@/components/Hero/HeroGrid/HeroGrid";
 import LoggedBaseLayout from "@/components/LoggedBaseLayout";
 
-export default function HomeDashBoardLayout() {
+type HomeDashBoardLayoutProps = {
+  heroes: HeroGridProps["heroes"];
+};
+export default function HomeDashBoardLayout({
+  heroes,
+}: HomeDashBoardLayoutProps) {
   return (
     <LoggedBaseLayout hasSearch={true}>
-      <HeroGrid
-        heroes={[
-          {
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
-            name: "Batman",
-            imageUrl: "https://picsum.photos/200/300",
-          },
-          {
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
-            name: "Batman",
-            imageUrl: "https://picsum.photos/200/300",
-          },
-          {
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
-            name: "Batman",
-            imageUrl: "https://picsum.photos/200/300",
-          },
-          {
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
-            name: "Batman",
-            imageUrl: "https://picsum.photos/200/300",
-          },
-          {
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
-            name: "Batman",
-            imageUrl: "https://picsum.photos/200/300",
-          },
-        ]}
-      />
+      <HeroGrid heroes={heroes} />
     </LoggedBaseLayout>
   );
 }

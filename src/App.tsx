@@ -1,11 +1,12 @@
-import HomeDashBoardLayout from "@/layouts/home";
-import ProfileLayout from "@/layouts/profile";
 import {
   ForgotPasswordPage,
   ForgotPasswordPageSuccess,
   LoginPage,
 } from "@/pages";
+import HomeDashBoardPage from "@/pages/home-dashboard";
+import { ProfilePage } from "@/pages/profile";
 import ProtectPage from "@/pages/protected";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         index: true,
         element: (
           <ProtectPage>
-            <HomeDashBoardLayout />
+            <HomeDashBoardPage />
           </ProtectPage>
         ),
       },
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         path: "profile/:id",
         element: (
           <ProtectPage>
-            <ProfileLayout />
+            <ProfilePage />
           </ProtectPage>
         ),
       },
@@ -49,8 +50,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
