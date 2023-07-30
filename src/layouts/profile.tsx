@@ -1,4 +1,5 @@
 import BreadCrumb from "@/components/BreadCrumb/BreadCrumb";
+import HeroDetail from "@/components/HeroDetail/HeroDetail";
 import LoggedBaseLayout from "@/components/LoggedBaseLayout";
 import Tabs from "@/components/Tabs/Tabs";
 import { ReactNode } from "react";
@@ -18,6 +19,8 @@ type ProfileLayoutProps = {
 
 export default function ProfileLayout({
   name,
+  description,
+  imageUrl,
   links,
   comics,
   events,
@@ -29,7 +32,16 @@ export default function ProfileLayout({
       <div className="mt-5">
         <Tabs
           items={[
-            { label: "Visão Geral", content: <h1>Visão Geral</h1> },
+            {
+              label: "Visão Geral",
+              content: (
+                <HeroDetail
+                  description={description}
+                  name={name}
+                  imageUrl={imageUrl}
+                />
+              ),
+            },
             { label: "Séries", content: <List items={series} /> },
             { label: "Quadrinhos", content: <List items={comics} /> },
             { label: "Eventos", content: <List items={events} /> },
