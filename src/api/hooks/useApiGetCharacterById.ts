@@ -11,7 +11,7 @@ export function useApiGetCharacterById(id: number) {
   }
 
   return useQuery({
-    queryKey: ["characters"],
+    queryKey: ["charactersById"],
     queryFn,
     select: (data) => {
       const hero = data.data.results[0];

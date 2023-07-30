@@ -4,13 +4,15 @@ import LoggedBaseLayout from "@/components/LoggedBaseLayout";
 
 type HomeDashBoardLayoutProps = {
   heroes: HeroGridProps["heroes"];
+  isLoading?: boolean;
 };
 export default function HomeDashBoardLayout({
   heroes,
+  isLoading,
 }: HomeDashBoardLayoutProps) {
   return (
     <LoggedBaseLayout hasSearch={true}>
-      <HeroGrid heroes={heroes} />
+      {isLoading ? "Loading..." : <HeroGrid heroes={heroes} />}
     </LoggedBaseLayout>
   );
 }

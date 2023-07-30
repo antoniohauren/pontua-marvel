@@ -3,11 +3,6 @@ import HomeDashBoardLayout from "@/layouts/home";
 
 export default function HomeDashBoardPage() {
   const { data, isLoading } = useApiGetCharacters();
-  console.log(data);
 
-  if (isLoading) {
-    return null;
-  }
-
-  return <HomeDashBoardLayout heroes={data || []} />;
+  return <HomeDashBoardLayout heroes={data || []} isLoading={isLoading} />;
 }
