@@ -11,7 +11,7 @@ export function useApiGetCharacterById(id: number) {
   }
 
   return useQuery({
-    queryKey: ["charactersById"],
+    queryKey: ["charactersById", id],
     queryFn,
     select: (data) => {
       const hero = data.data.results[0];
@@ -23,6 +23,10 @@ export function useApiGetCharacterById(id: number) {
         series: hero.series.items.map((item) => item.name),
         comics: hero.comics.items.map((item) => item.name),
         events: hero.events.items.map((item) => item.name),
+        links: hero.urls.map((item) => ({
+          url: item.url,
+          name: item.type,
+        })),
       };
     },
   });

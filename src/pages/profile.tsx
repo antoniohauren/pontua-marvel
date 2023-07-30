@@ -16,7 +16,7 @@ export function ProfilePage() {
       events={data?.events || []}
       comics={data?.comics || []}
       series={data?.series || []}
-      authors={[]}
+      links={data?.links || []}
     />
   );
 }
