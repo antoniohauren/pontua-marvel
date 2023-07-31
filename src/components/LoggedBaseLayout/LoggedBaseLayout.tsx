@@ -6,7 +6,9 @@ import { LoggedBaseLayoutProps } from ".";
 
 export default function LoggedBaseLayout({
   children,
+  search,
   hasSearch,
+  setSearch,
 }: LoggedBaseLayoutProps) {
   const { pathname } = useLocation();
 
@@ -17,7 +19,7 @@ export default function LoggedBaseLayout({
       <SideBar menuItems={menuEntries || []} />
 
       <div>
-        <TopBar hasSearch={hasSearch} />
+        <TopBar hasSearch={hasSearch} setSearch={setSearch} search={search} />
         <div className="p-10">{children}</div>
       </div>
     </div>

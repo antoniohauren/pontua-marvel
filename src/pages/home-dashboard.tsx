@@ -1,11 +1,19 @@
 import { useApiGetCharacters } from "@/api/hooks/useApiGetCharacters";
 import HomeDashBoardLayout from "@/layouts/home";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDebounce } from "use-debounce";
 
 export default function HomeDashBoardPage() {
   const [page, setPage] = useState(0);
+  const [search, setSearch] = useState("");
 
-  const { data, isLoading } = useApiGetCharacters(page);
+  const [debounceSearch] = useDebounce(search, 300);
+
+  const { data, isLoading } = useApiGetCharacters(page, debounceSearch);
+
+  useEffect(() => {
+    setPage(0);
+  }, [debounceSearch]);
 
   return (
     <HomeDashBoardLayout
@@ -13,7 +21,9 @@ export default function HomeDashBoardPage() {
       isLoading={isLoading}
       totalPages={data?.total}
       page={page}
+      search={search}
       setPage={setPage}
+      setSearch={setSearch}
     />
   );
 }

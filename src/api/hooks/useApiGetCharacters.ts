@@ -3,16 +3,16 @@ import { MarvelApiCharacterResponse } from "@/api/domain/heroes.domain";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-export function useApiGetCharacters(page = 0) {
+export function useApiGetCharacters(page = 0, search = "") {
   page = page * 16;
   function queryFn() {
     return axios
-      .get<MarvelApiCharacterResponse>(getUrl("characters", page))
+      .get<MarvelApiCharacterResponse>(getUrl("characters", page, search))
       .then(extractData);
   }
 
   return useQuery({
-    queryKey: ["characters", page],
+    queryKey: ["characters", page, search],
     queryFn,
     select: (data) => {
       return {

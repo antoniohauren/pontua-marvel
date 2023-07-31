@@ -1,1 +1,4 @@
-export type SearchInputProps = {};
+export type SearchInputProps = {
+  value?: string;
+  onChange?: (value: string) => void;
+};

@@ -1,6 +1,6 @@
+import { TopBarProps } from "@/sections/TopBar";
 import { ReactNode } from "react";
 
 export type LoggedBaseLayoutProps = {
   children?: ReactNode;
-  hasSearch?: boolean;
-};
+} & Pick<TopBarProps, "hasSearch" | "search" | "setSearch">;
