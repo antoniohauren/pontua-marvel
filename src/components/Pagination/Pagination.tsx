@@ -3,27 +3,67 @@ import {
   PaginationItemPrevNextProps,
   PaginationItemProps,
   PaginationProps,
+  getPagesArray,
 } from ".";
 
-export default function Pagination({}: PaginationProps) {
+export default function Pagination({
+  page = 0,
+  setPage,
+  totalPages = 0,
+}: PaginationProps) {
+  const pagesArray = getPagesArray(page, totalPages);
+
   return (
     <div className="flex max-w-fit rounded-lg border-2 border-gray/300">
-      <PaginationItemPrevNext variant="prev" />
-      {[1, 2, 3, 4, 5].map((item) => {
-        return <PaginationItem key={item}>{item}</PaginationItem>;
+      <PaginationItemPrevNext
+        variant="prev"
+        setPage={setPage}
+        page={page}
+        totalPages={totalPages}
+      />
+
+      {pagesArray.map((item) => {
+        return (
+          <PaginationItem key={item} isActive={page + 1 === item}>
+            {item}
+          </PaginationItem>
+        );
       })}
 
-      <PaginationItemPrevNext variant="next" />
+      <PaginationItemPrevNext
+        variant="next"
+        setPage={setPage}
+        page={page}
+        totalPages={totalPages}
+      />
     </div>
   );
 }
 
-function PaginationItemPrevNext({ variant }: PaginationItemPrevNextProps) {
+function PaginationItemPrevNext({
+  variant,
+  page = 0,
+  setPage,
+  totalPages = 0,
+}: PaginationItemPrevNextProps) {
   const isPrev = variant === "prev";
   const isNext = variant === "next";
 
+  function handleClick() {
+    if (isPrev && page > 0) {
+      setPage?.((prev) => prev - 1);
+    }
+
+    if (isNext && page < totalPages) {
+      setPage?.((prev) => prev + 1);
+    }
+  }
+
   return (
-    <div className="flex cursor-pointer items-center text-blue/200">
+    <div
+      className="flex cursor-pointer items-center text-blue/200"
+      onClick={handleClick}
+    >
       {isPrev && (
         <div className="ml-2 h-6 w-6">
           <ArrowIcon />
