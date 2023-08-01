@@ -6,6 +6,7 @@ export default function MenuItem({
   icon,
   isSelected,
   href,
+  onClick,
 }: MenuItemProps) {
   return (
     <Link to={href || "#"}>
@@ -13,6 +14,7 @@ export default function MenuItem({
         className={`flex w-full cursor-pointer items-center gap-2 rounded-xl px-4 py-2 hover:bg-gray/background ${
           isSelected ? "text-orange/500" : ""
         }`}
+        onClick={onClick}
       >
         {icon && <div className="h-8 w-8 p-1">{icon}</div>}
 

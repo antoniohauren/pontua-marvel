@@ -45,7 +45,11 @@ const router = createBrowserRouter([
       },
       {
         path: "select-agent",
-        element: <SelectAgentPage />,
+        element: (
+          <ProtectPage>
+            <SelectAgentPage />
+          </ProtectPage>
+        ),
       },
     ],
   },

@@ -1,9 +1,17 @@
 import ArrowBackIcon from "@/assets/arrowBack.svg";
 import MenuItem from "@/components/Menu/MenuItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SideBarProps } from ".";
 
 export default function SideBar({ menuItems }: SideBarProps) {
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("heroId");
+    navigate("/login");
+  }
+
   return (
     <div className="z-10 flex h-screen w-full min-w-[300px] max-w-[300px] flex-col border-r-2 border-r-gray/100 bg-white shadow-md">
       <Link to="/">
@@ -25,7 +33,11 @@ export default function SideBar({ menuItems }: SideBarProps) {
       </div>
 
       <div className="mt-4 px-4">
-        <MenuItem label={"Sair"} icon={<ArrowBackIcon />} href="/login" />
+        <MenuItem
+          label={"Sair"}
+          icon={<ArrowBackIcon />}
+          onClick={handleLogout}
+        />
       </div>
     </div>
   );

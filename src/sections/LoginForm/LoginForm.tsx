@@ -24,8 +24,8 @@ export default function LoginForm({}: LoginFormProps) {
   const { mutate, isLoading } = useApiLogin(() => navigate("/select-agent"));
 
   function handleLogin() {
-    form.handleSubmit(() => {
-      mutate();
+    form.handleSubmit((data) => {
+      mutate(data);
     })();
   }
 

@@ -1,10 +1,13 @@
+import { LoginDto } from "@/api/dto/login.dto";
 import { useMutation } from "@tanstack/react-query";
 
 export function useApiLogin(onSuccess: () => void) {
-  function mutationFn() {
+  function mutationFn(data: LoginDto) {
     return new Promise<string>((resolve) => {
+      window.localStorage.setItem("token", data.email);
+
       setTimeout(() => {
-        resolve("token");
+        resolve(data.email);
       }, 500);
     });
   }
