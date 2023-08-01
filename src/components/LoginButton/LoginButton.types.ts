@@ -1,1 +1,5 @@
-export type LoginButtonProps = {};
+export type LoginButtonProps = {
+  onClick: () => void;
+  isDisabled: boolean;
+  isLoading: boolean;
+};

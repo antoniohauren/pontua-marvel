@@ -1,3 +1,4 @@
+import SpinnerIcon from "@/assets/spinner.svg";
 import { Link } from "react-router-dom";
 import { ButtonProps } from ".";
 
@@ -6,6 +7,7 @@ export default function Button({
   icon,
   fullWidth,
   href,
+  isLoading,
   ...rest
 }: ButtonProps) {
   const baseButton = (
@@ -15,8 +17,16 @@ export default function Button({
         fullWidth && "w-full"
       }`}
     >
-      <span className="text-2xl font-bold">{title}</span>
-      {!!icon && <div className="mt-[6px] h-3 w-3">{icon}</div>}
+      {isLoading ? (
+        <div className="h-8 w-8 animate-spin">
+          <SpinnerIcon />
+        </div>
+      ) : (
+        <>
+          <span className="text-2xl font-bold">{title}</span>
+          {!!icon && <div className="mt-[6px] h-3 w-3">{icon}</div>}
+        </>
+      )}
     </button>
   );
 

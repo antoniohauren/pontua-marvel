@@ -25,7 +25,7 @@ export default function SideBar({ menuItems }: SideBarProps) {
       </div>
 
       <div className="mt-4 px-4">
-        <MenuItem label={"Sair"} icon={<ArrowBackIcon />} />
+        <MenuItem label={"Sair"} icon={<ArrowBackIcon />} href="/login" />
       </div>
     </div>
   );

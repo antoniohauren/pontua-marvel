@@ -4,7 +4,10 @@ import Input from "@/components/Input/Input";
 import { useRef, useState } from "react";
 import { PasswordInputProps } from ".";
 
-export default function PasswordInput({}: PasswordInputProps) {
+export default function PasswordInput({
+  onChange,
+  ...props
+}: PasswordInputProps) {
   const [visible, setVisible] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -15,6 +18,8 @@ export default function PasswordInput({}: PasswordInputProps) {
 
   return (
     <Input
+      onChange={onChange}
+      {...props}
       inputRef={inputRef}
       icon={visible ? <EyeCloseIcon /> : <EyeOpenIcon />}
       type={visible ? "text" : "password"}

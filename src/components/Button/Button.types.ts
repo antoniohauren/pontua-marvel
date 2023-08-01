@@ -5,4 +5,5 @@ export type ButtonProps = {
   icon?: ReactNode;
   fullWidth?: boolean;
   href?: string;
+  isLoading?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
