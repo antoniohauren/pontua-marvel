@@ -1,4 +1,5 @@
 import ArrowIcon from "@/assets/arrow.svg";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import {
   PaginationItemPrevNextProps,
   PaginationItemProps,
@@ -10,8 +11,10 @@ export default function Pagination({
   page = 0,
   setPage,
   totalPages = 0,
+  isLoading,
 }: PaginationProps) {
-  const pagesArray = getPagesArray(page, totalPages);
+  const isMobile = useIsMobile();
+  const pagesArray = getPagesArray(page, totalPages, isMobile, isLoading);
 
   return (
     <div className="flex max-w-fit rounded-lg border-2 border-gray/300">
@@ -22,9 +25,13 @@ export default function Pagination({
         totalPages={totalPages}
       />
 
-      {pagesArray.map((item) => {
+      {pagesArray.map((item, index) => {
         return (
-          <PaginationItem key={item} isActive={page + 1 === item}>
+          <PaginationItem
+            key={index}
+            isActive={page + 1 === item}
+            setPage={setPage}
+          >
             {item}
           </PaginationItem>
         );
@@ -90,9 +97,10 @@ function PaginationItemPrevNext({
   );
 }
 
-function PaginationItem({ children, isActive }: PaginationItemProps) {
+function PaginationItem({ children, isActive, setPage }: PaginationItemProps) {
   return (
     <span
+      onClick={() => setPage?.(Number(children) - 1)}
       className={`
       h-full cursor-pointer border-l-[1px] border-r-[1px] border-gray/300 p-2 px-4
       ${isActive ? "bg-gray/300 text-blue/600" : "text-blue/200"}

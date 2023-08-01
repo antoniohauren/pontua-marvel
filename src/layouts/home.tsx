@@ -23,10 +23,11 @@ export default function HomeDashBoardLayout({
 }: HomeDashBoardLayoutProps) {
   return (
     <LoggedBaseLayout hasSearch={true} setSearch={setSearch} search={search}>
-      {isLoading ? "Loading..." : <HeroGrid heroes={heroes} />}
+      <HeroGrid heroes={heroes} isLoading={isLoading} />
 
-      <div className="mt-4 flex w-full justify-center">
+      <div className="mt-4 flex justify-center">
         <Pagination
+          isLoading={isLoading}
           page={page}
           setPage={setPage}
           totalPages={Math.ceil(totalPages / 16)}

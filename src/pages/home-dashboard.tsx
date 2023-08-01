@@ -17,7 +17,7 @@ export default function HomeDashBoardPage() {
 
   return (
     <HomeDashBoardLayout
-      heroes={data?.items || []}
+      heroes={data?.items || Array(16).fill("")}
       isLoading={isLoading}
       totalPages={data?.total}
       page={page}

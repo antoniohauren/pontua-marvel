@@ -15,12 +15,12 @@ export default function LoggedBaseLayout({
   const { data: menuEntries } = useApiGetMenuEntries(pathname);
 
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <SideBar menuItems={menuEntries || []} />
 
-      <div>
+      <div className="w-full md:ml-[300px]">
         <TopBar hasSearch={hasSearch} setSearch={setSearch} search={search} />
-        <div className="p-10">{children}</div>
+        <div className="w-full p-10">{children}</div>
       </div>
     </div>
   );

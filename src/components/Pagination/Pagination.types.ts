@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 
-export type PaginationProps = {} & Pick<
-  PaginationItemProps,
-  "setPage" | "totalPages" | "page"
->;
+export type PaginationProps = {
+  isLoading?: boolean;
+} & Pick<PaginationItemProps, "setPage" | "totalPages" | "page">;
 
 export type PaginationItemProps = {
   children: ReactNode;
