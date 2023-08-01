@@ -57,7 +57,7 @@ function LinkList({ items }: { items: { name: string; url: string }[] }) {
   return (
     <ListWrapper>
       {items.map((item, index) => (
-        <a href={item.url} target="_blank" className="underline">
+        <a href={item.url} target="_blank" className="underline" key={index}>
           <li className="font-semibold text-blue/200" key={index}>
             {item.name}
           </li>

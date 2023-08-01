@@ -6,6 +6,7 @@ import {
 import HomeDashBoardPage from "@/pages/home-dashboard";
 import { ProfilePage } from "@/pages/profile";
 import ProtectPage from "@/pages/protected";
+import SelectAgentPage from "@/pages/select-agent";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             element: <ForgotPasswordPageSuccess />,
           },
         ],
+      },
+      {
+        path: "select-agent",
+        element: <SelectAgentPage />,
       },
     ],
   },

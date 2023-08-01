@@ -1,5 +1,5 @@
 type Hero = {
-  id: string;
+  id: number;
   imageUrl: string;
   name: string;
   isSelected: boolean;
@@ -7,17 +7,17 @@ type Hero = {
 
 export type HeroSelectProps = {
   placeholder?: string;
-  value?: string;
-  onSelect?: (value: string) => void;
+  value?: number;
+  onSelect?: (value: number) => void;
   heroes: Hero[];
 };
 
 export type HeroOptionProps = {
   label: string;
-  value: string;
+  value: number;
   isSelected?: boolean;
   imageUrl?: string;
-  onSelect?: (value: string) => void;
+  onSelect?: (value: number) => void;
 };
 
 export type HeroOptionsProps = {

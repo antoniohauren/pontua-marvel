@@ -25,7 +25,7 @@ export default function HeroSelect({
   const hasValue = value !== undefined;
   const selected = options.find((hero) => hero.isSelected);
 
-  function handleSelect(id: string) {
+  function handleSelect(id: number) {
     onSelect?.(id);
     setIsOpen(false);
   }

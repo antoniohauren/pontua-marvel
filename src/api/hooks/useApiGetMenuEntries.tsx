@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { ReactNode } from "react";
 
 export function useApiGetMenuEntries(pathname: string) {
+  const heroId = window.localStorage.getItem("heroId");
+
   function queryFn() {
     return new Promise<string[]>((resolve) => {
       setTimeout(() => {
@@ -27,7 +29,7 @@ export function useApiGetMenuEntries(pathname: string) {
     },
     {
       label: "Perfil",
-      href: "/profile/1",
+      href: `/profile/${heroId}`,
       icon: <ProfileIcon />,
     },
     {
