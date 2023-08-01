@@ -5,7 +5,6 @@ import { LoginButtonProps } from ".";
 export default function LoginButton({
   isDisabled,
   isLoading,
-  onClick,
 }: LoginButtonProps) {
   return (
     <Button
@@ -13,7 +12,7 @@ export default function LoginButton({
       title="entrar"
       icon={<LoginIcon />}
       disabled={isDisabled}
-      onClick={onClick}
+      type="submit"
       isLoading={isLoading}
     />
   );
