@@ -11,5 +11,5 @@ export default meta;
 type Story = StoryObj<typeof LoginButton>;
 
 export const Default: Story = {
-  render: () => <LoginButton />,
+  render: () => <LoginButton isDisabled={false} isLoading={false} />,
 };

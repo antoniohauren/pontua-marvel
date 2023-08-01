@@ -13,7 +13,7 @@ type Story = StoryObj<typeof HeroSelect>;
 
 export const Default: Story = {
   render: () => {
-    const [value, setValue] = useState<undefined | string>(undefined);
+    const [value, setValue] = useState<undefined | number>(undefined);
 
     return (
       <HeroSelect
@@ -22,7 +22,7 @@ export const Default: Story = {
         value={value}
         heroes={[
           {
-            id: "1",
+            id: 1,
             name: "Jett",
             isSelected: false,
             imageUrl:

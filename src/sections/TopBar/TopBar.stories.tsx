@@ -11,9 +11,9 @@ export default meta;
 type Story = StoryObj<typeof TopBar>;
 
 export const Default: Story = {
-  render: () => <TopBar />,
+  render: () => <TopBar menuItems={[]} />,
 };
 
 export const WithSearch: Story = {
-  render: () => <TopBar />,
+  render: () => <TopBar menuItems={[]} />,
 };
