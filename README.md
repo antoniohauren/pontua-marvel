@@ -1,27 +1,45 @@
-# React + TypeScript + Vite
+# Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Get your key from https://developer.marvel.com
+- copy `.env.example` to `.env`
+- fill `VITE_MARVEL_API_KEY` with your `PUBLIC` key
 
-Currently, two official plugins are available:
+# Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- pnpm
+- vite
+- react
+- typescript
+- tailwindcss
+- storybook
+- zod
+- react-hook-form
+- react-query
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Tailwind for fast css write. storybook for component preview without the necessity of import it on an actual page. react with typescript for a typesafe magic, alongside with zod and hook-form for even more typesafety and not only on dev, typesafe for forms on production as well. react-query for efficiently api calls.
 
-- Configure the top-level `parserOptions` property like this:
+# Commands
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+### pnpm can be replaced with yarn or even npm
+
+For dev preview:
+
+```
+pnpm dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+For build:
+
+```
+pnpm build
+```
+
+For components preview:
+
+```
+pnpm storybook
+```
+
+For pontua's guys: i would love to explain my tough process and answer any of your questions on a call, see you soon!
