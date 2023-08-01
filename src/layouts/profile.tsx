@@ -33,7 +33,7 @@ export default function ProfileLayout({
         <Tabs
           items={[
             {
-              label: "Visão Geral",
+              label: "Geral",
               content: (
                 <HeroDetail
                   description={description}

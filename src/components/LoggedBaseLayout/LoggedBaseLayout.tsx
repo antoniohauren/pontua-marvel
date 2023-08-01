@@ -19,7 +19,12 @@ export default function LoggedBaseLayout({
       <SideBar menuItems={menuEntries || []} />
 
       <div className="w-full md:ml-[300px]">
-        <TopBar hasSearch={hasSearch} setSearch={setSearch} search={search} />
+        <TopBar
+          hasSearch={hasSearch}
+          setSearch={setSearch}
+          search={search}
+          menuItems={menuEntries || []}
+        />
         <div className="w-full p-10">{children}</div>
       </div>
     </div>

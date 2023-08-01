@@ -6,6 +6,7 @@ export default function MenuItem({
   icon,
   isSelected,
   href,
+  isMobile,
   onClick,
 }: MenuItemProps) {
   return (
@@ -18,7 +19,7 @@ export default function MenuItem({
       >
         {icon && <div className="h-8 w-8 p-1">{icon}</div>}
 
-        <p className="font-medium">{label}</p>
+        {isMobile ? null : <p className="font-medium">{label}</p>}
       </div>
     </Link>
   );

@@ -13,7 +13,7 @@ export const Default: Story = {
   render: () => (
     <Tabs
       items={[
-        { label: "Visão Geral", content: <h1>Visão Geral</h1> },
+        { label: "Geral", content: <h1>Visão Geral</h1> },
         { label: "Teams", content: <h1>Teams</h1> },
         { label: "Powers", content: <h1>Powers</h1> },
         { label: "Species", content: <h1>Species</h1> },
