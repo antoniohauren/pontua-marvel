@@ -43,3 +43,11 @@ pnpm storybook
 ```
 
 For pontua's guys: i would love to explain my tough process and answer any of your questions on a call, see you soon!
+
+
+# preview
+
+https://github.com/antoniohauren/pontua-marvel/assets/101012531/9293dac5-4a46-4893-a0f2-16e53daa65a3
+
+
+
